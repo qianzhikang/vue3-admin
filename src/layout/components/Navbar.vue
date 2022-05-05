@@ -5,6 +5,7 @@
     <div class="right-menu">
       <theme-picker class="right-menu-item hover-effect"></theme-picker>
       <lang-select class="right-menu-item hover-effect" />
+      <screenfull class="right-menu-item hover-effect" />
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
@@ -30,6 +31,7 @@
 </template>
 
 <script setup>
+import Screenfull from '@/components/Screenfull'
 import { useStore } from 'vuex'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
