@@ -7,6 +7,7 @@
       <theme-picker class="right-menu-item hover-effect"></theme-picker>
       <lang-select class="right-menu-item hover-effect" />
       <screenfull class="right-menu-item hover-effect" />
+      <guide class="right-menu-item hover-effect" />
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
@@ -32,6 +33,7 @@
 </template>
 
 <script setup>
+import Guide from '@/components/Guide'
 import HeaderSearch from '@/components/HeaderSearch'
 import Screenfull from '@/components/Screenfull'
 import { useStore } from 'vuex'
