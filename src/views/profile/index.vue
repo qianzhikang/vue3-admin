@@ -8,7 +8,7 @@
         <el-card>
           <el-tabs v-model="activeName">
             <el-tab-pane :label="$t('msg.profile.feature')" name="feature">
-              <feature />
+              <feature :features="featureData" />
             </el-tab-pane>
             <el-tab-pane :label="$t('msg.profile.chapter')" name="chapter">
               <chapter />
@@ -30,6 +30,7 @@ import Feature from './components/Feature.vue'
 import Author from './components/Author.vue'
 import { getFeature } from '@/api/user'
 import { ref } from 'vue'
+import { watchSwitchLang } from '@/utils/i18n'
 const activeName = ref('feature')
 
 const featureData = ref([])
@@ -37,6 +38,8 @@ const getFeatureData = async () => {
   featureData.value = await getFeature()
 }
 getFeatureData()
+// 监听语言切换
+watchSwitchLang(getFeatureData)
 </script>
 
 <style lang="scss" scoped>
