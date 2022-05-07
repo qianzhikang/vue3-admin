@@ -1,4 +1,9 @@
 <template>
-  <h2>import</h2>
+  <upload-excel></upload-excel>
 </template>
-<script setup></script>
+
+<script setup>
+import UploadExcel from '@/components/UploadExcel'
+</script>
+
+<style lang="scss" scoped></style>
