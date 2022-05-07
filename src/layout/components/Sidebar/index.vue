@@ -13,6 +13,7 @@
 <script setup>
 import {} from 'vue'
 import SidebarMenu from './SidebarMenu'
+const logoHeight = 44
 </script>
 
 <style lang="scss" scoped>

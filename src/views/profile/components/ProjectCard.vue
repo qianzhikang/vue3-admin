@@ -1,4 +1,4 @@
 <template>
-  <h2>import</h2>
+  <h2>Author</h2>
 </template>
 <script setup></script>
