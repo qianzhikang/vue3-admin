@@ -6,11 +6,14 @@
 
 ![image-20220504205438611](https://pic-go.oss-cn-shanghai.aliyuncs.com/typora-img/202205042054779.png)
 
-> 主页部分功能(未完)
+> 个人中心页
 
-![2022-05-04-20-56-45](https://pic-go.oss-cn-shanghai.aliyuncs.com/typora-img/202205042057897.gif)
+![image-20220507112946574](https://pic-go.oss-cn-shanghai.aliyuncs.com/typora-img/202205071129739.png)
+
+> 待续...
 
 ## 依赖安装
+
 ```
 npm install
 ```
