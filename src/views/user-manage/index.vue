@@ -21,10 +21,10 @@
         <el-table-column :label="$t('msg.excel.role')">
           <template #default="{ row }">
             <div v-if="row.role && row.role.length > 0">
-              <el-tag v-for="item in row.role" :key="item.id" size="mini">{{ item.title }}</el-tag>
+              <el-tag v-for="item in row.role" :key="item.id" size="default">{{ item.title }}</el-tag>
             </div>
             <div v-else>
-              <el-tag size="mini">{{ $t('msg.excel.defaultRole') }}</el-tag>
+              <el-tag size="default">{{ $t('msg.excel.defaultRole') }}</el-tag>
             </div>
           </template>
         </el-table-column>
@@ -35,17 +35,17 @@
         </el-table-column>
         <el-table-column :label="$t('msg.excel.action')" fixed="right" width="260">
           <template #default="{ row }">
-            <el-button type="primary" size="mini" @click="onShowClick(row._id)">
+            <el-button type="primary" size="default" @click="onShowClick(row._id)">
               {{ $t('msg.excel.show') }}
             </el-button>
-            <el-button type="info" size="mini" @click="onShowRoleClick(row)">
+            <el-button type="info" size="default" @click="onShowRoleClick(row)">
               {{ $t('msg.excel.showRole') }}
             </el-button>
-            <el-button type="danger" size="mini" @click="onRemoveClick(row)">{{ $t('msg.excel.remove') }}</el-button>
-            <roles-dialog v-model="roleDialogVisible" :userId="selectUserId" @updateRole="getListData"></roles-dialog>
+            <el-button type="danger" size="default" @click="onRemoveClick(row)">{{ $t('msg.excel.remove') }}</el-button>
           </template>
         </el-table-column>
       </el-table>
+      <roles-dialog v-model="roleDialogVisible" :userId="selectUserId" @updateRole="getListData"></roles-dialog>
 
       <el-pagination
         class="pagination"
