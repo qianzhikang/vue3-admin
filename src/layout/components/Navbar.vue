@@ -43,8 +43,10 @@ import Hamburger from '@/components/Hamburger'
 import Breadcrumb from '@/components/Breadcrumb'
 import LangSelect from '@/components/LangSelect'
 import ThemePicker from '@/components/ThemeSelect/index'
+import { resetRouter } from '@/router'
 const store = useStore()
 const logout = () => {
+  resetRouter()
   store.dispatch('user/logout')
 }
 const route = useRoute()
