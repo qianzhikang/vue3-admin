@@ -17,8 +17,10 @@
             {{ $filters.relativeTime(row.publicDate) }}
           </template>
           <template #default="{ row }" v-else-if="item.prop === 'action'">
-            <el-button type="primary" size="mini" @click="onShowClick(row)">{{ $t('msg.article.show') }}</el-button>
-            <el-button type="danger" size="mini" @click="onRemoveClick(row)">
+            <el-button type="primary" size="small" @click="onShowClick(row)">
+              {{ $t('msg.article.show') }}
+            </el-button>
+            <el-button type="danger" size="small" @click="onRemoveClick(row)">
               {{ $t('msg.article.remove') }}
             </el-button>
           </template>
@@ -48,6 +50,7 @@ import { watchSwitchLang } from '@/utils/i18n'
 import { useI18n } from 'vue-i18n'
 import { dynamicData, selectDynamicLabel, tableColumns } from './dynamic'
 import { ElMessageBox, ElMessage } from 'element-plus'
+import { useRouter } from 'vue-router'
 // 表格拖拽相关
 onMounted(() => {
   initSortable(tableData, getListData)
@@ -94,6 +97,14 @@ const onRemoveClick = (row) => {
     // 重新渲染数据
     getListData()
   })
+}
+
+/**
+ * 查看按钮点击事件
+ */
+const router = useRouter()
+const onShowClick = (row) => {
+  router.push(`/article/${row._id}`)
 }
 getListData()
 // 监听语言切换
